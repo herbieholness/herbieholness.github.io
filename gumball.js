@@ -2,7 +2,7 @@ let $spacer = document.querySelector('.spacer');
 let $video = document.querySelector('.video');
 
 // The height of the spacer element
-let spacerHeight = $spacer.viewportHeight;
+let spacerHeight = $spacer.clientHeight;
 // the height of the viewport
 let viewportHeight = document.documentElement.getBoundingClientRect().height
 
