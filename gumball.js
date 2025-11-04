@@ -1,32 +1,41 @@
-let $spacer = document.querySelector('.spacer');
-let $video = document.querySelector('.video');
+const video = document.querySelector('.video');
+const poster = document.querySelector('.video-poster');
+const spacer = document.querySelector('.spacer');
 
-// The height of the spacer element
-let spacerHeight = $spacer.clientHeight;
-// the height of the viewport
-let viewportHeight = document.documentElement.getBoundingClientRect().height
+let videoDuration = 0;
+let lastScrollY = 0;
+let isPrimed = false;
 
-// We can get the total scrollable height be subtracting the spacer element's height by the viewport height
-let scrollableHeight = spacerHeight - viewportHeight;
-// Get the full duration of the video
-let videoDuration;
-// Keep track the video's playtime
-let currentTime = 0;
-
-// The scroll event handler
-function handleScrollEvent(event) {
-   // Here we sync the y position of the scrollbar to the progress of the video
-   currentTime = (window.scrollY * videoDuration) / scrollableHeight;
-   $video.currentTime = currentTime;
+function updateVideo() {
+  if (videoDuration) {
+    const scrollable = spacer.clientHeight - window.innerHeight;
+    const progress = Math.min(Math.max(lastScrollY / scrollable, 0), 1);
+    video.currentTime = progress * videoDuration;
+  }
+  requestAnimationFrame(updateVideo);
 }
 
-// Loaded Data handler, that is, the function that runs after the video is ready to play
-function handleLoadedData(event) {
-   // Get the full video duration
-   videoDuration = $video.duration;
-   // Do stuff when user scrolls
-   window.addEventListener('scroll', handleScrollEvent);
+window.addEventListener('scroll', () => {
+  lastScrollY = window.scrollY;
+});
+
+video.addEventListener('loadedmetadata', () => {
+  videoDuration = video.duration;
+  video.currentTime = 0;
+});
+
+function primeVideo() {
+  if (isPrimed) return;
+  isPrimed = true;
+  video.play()
+    .then(() => {
+      video.pause();
+      video.currentTime = 0;
+      poster.style.display = 'none';
+    })
 }
 
-// Do stuff when the video is ready to play
-$video.addEventListener('loadeddata', handleLoadedData);
+window.addEventListener('touchstart', primeVideo, { once: true });
+window.addEventListener('click', primeVideo, { once: true });
+
+requestAnimationFrame(updateVideo);
