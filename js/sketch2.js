@@ -7,7 +7,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   noStroke();
 
-  toggleBtn = createImg('moon.png', 'Toggle dark mode');
+  toggleBtn = createImg('visuals/moon.png', 'Toggle dark mode');
   toggleBtn.id('toggle-btn');
   toggleBtn.size(200, 200);
   toggleBtn.position(20, 20);
