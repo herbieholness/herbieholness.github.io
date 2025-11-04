@@ -12,6 +12,7 @@ function setup() {
   toggleBtn.size(200, 200);
   toggleBtn.position(20, 20);
   toggleBtn.mousePressed(toggleMode);
+  toggleBtn.mousePressed(fill(0,0,0,100);
 }
 
 function windowResized() {
@@ -68,8 +69,6 @@ function toggleMode() {
     toggleBtn.elt.src = 'blue moon.png';
     removeDarkMode();
   }
-
-  console.log("Dark mode active:", document.body.classList.contains('dark-mode'));
 }
 
 function applyDarkMode() {
