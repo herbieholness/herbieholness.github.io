@@ -5,6 +5,8 @@ const spacer = document.querySelector('.spacer');
 let videoDuration = 0;
 let lastScrollY = 0;
 let isPrimed = false;
+window.scrollTo(0, 0);
+
 
 function updateVideo() {
   if (videoDuration) {
