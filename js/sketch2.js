@@ -61,13 +61,13 @@ function toggleMode() {
   console.log("Mode:", isDarkMode);
 
   if (isDarkMode === 0) {
-    toggleBtn.elt.src = 'moon.png';
+    toggleBtn.elt.src = 'visuals/moon.png';
     removeDarkMode();
   } else if (isDarkMode === 1) {
-    toggleBtn.elt.src = 'sun.png';
+    toggleBtn.elt.src = 'visuals/sun.png';
     applyDarkMode();
   } else {
-    toggleBtn.elt.src = 'blue moon.png';
+    toggleBtn.elt.src = 'visuals/blue moon.png';
     removeDarkMode();
   }
 }
