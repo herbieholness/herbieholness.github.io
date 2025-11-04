@@ -12,7 +12,6 @@ function setup() {
   toggleBtn.size(200, 200);
   toggleBtn.position(20, 20);
   toggleBtn.mousePressed(toggleMode);
-  toggleBtn.mousePressed(createCanvas(windowWidth, windowHeight));
 }
 
 function windowResized() {
