@@ -55,7 +55,7 @@ function touchMoved() {
 }
 
 function toggleMode() {
-  createCanvas(windowWidth, windowHeight);
+  //createCanvas(windowWidth, windowHeight);
 
   isDarkMode = (isDarkMode + 1) % 3;
   console.log("Mode:", isDarkMode);
