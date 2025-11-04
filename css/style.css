@@ -1,0 +1,88 @@
+
+body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        background-color: white;
+      }
+      canvas {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+      #title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: bold;
+        font-size: 3em;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        z-index: 2;
+        font-family: sans-serif;
+      }
+      #subtitle {
+        position: absolute;
+        white-space: nowrap;
+        top: 62%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: clamp(0.8em, 2vh, 5vw);
+        color: rgb(255, 255, 255);
+        text-align: center;
+        z-index: 2;
+        font-family: sans-serif;
+      }
+
+      #link {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: clamp(0.8em, 2vh, 5vw);
+        color: rgb(255, 255, 255);
+        text-align: center;
+        z-index: 2;
+        font-family: sans-serif;
+      }
+      #link.dark-mode {
+        color: rgb(0, 0, 0);
+      }
+      #subsubtitle {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 0.5em;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        z-index: 2;
+        font-family: sans-serif;
+      }
+      #subsubtitle.dark-mode {
+        color: rgb(0, 0, 0);
+      }
+      #herbie-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: auto;     
+        height: 30%;    
+        transform: translate(-50%, -50%);
+        z-index: 1;         
+        border-radius: 8px; 
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); 
+      }
+      img {
+        position: absolute;
+        bottom: 6em;
+        right: 6em;
+        width: 20vh;
+        height: auto;
+        z-index: 2;
+        opacity: 0.9;
+      }
